@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreshForge • Your Neighborhood Grocery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap');
+    
+    body { font-family: 'Inter', sans-serif; }
+    .title-font { font-family: 'Space Grotesk', sans-serif; }
+    
+    .hero-bg {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://picsum.photos/id/1015/2000/1200') center/cover;
+      background-attachment: fixed;
+    }
+    
+    .product-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .product-card:hover {
+      transform: translateY(-20px) scale(1.03);
+      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+    }
+    
+    .stat-number { font-size: 3.5rem; line-height: 1; }
+    
+    .floating { animation: float 6s ease-in-out infinite; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+  </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-black/80 backdrop-blur-lg z-50 border-b border-green-500/20">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-5">
+      <h1 class="title-font text-3xl font-bold tracking-tighter text-green-400">FRESH<span class="text-white">FORGE</span></h1>
+      <div class="flex gap-8 text-sm font-medium">
+        <a href="#" class="hover:text-green-400 transition">Shop</a>
+        <a href="#" class="hover:text-green-400 transition">Fresh Picks</a>
+        <a href="#" class="hover:text-green-400 transition">About</a>
+        <a href="#" class="hover:text-green-400 transition">Contact</a>
+      </div>
+      <button class="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-full font-semibold transition">Order Now</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-bg h-screen flex items-center justify-center text-center relative">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="title-font text-7xl md:text-8xl font-bold tracking-tighter mb-6 leading-none">
+        FARM TO TABLE.<br>FAST AS LIGHTNING.
+      </h2>
+      <p class="text-2xl text-gray-300 mb-10">Premium groceries delivered fresh. Built with love for your table.</p>
+      <button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})" 
+              class="bg-white text-black px-10 py-5 rounded-full text-xl font-bold hover:scale-105 transition">
+        Start Shopping →
+      </button>
+    </div>
+    
+    <!-- Floating icons -->
+    <div class="absolute bottom-20 left-10 text-6xl floating">🥑</div>
+    <div class="absolute bottom-32 right-20 text-7xl floating delay-300">🍓</div>
+    <div class="absolute top-40 right-32 text-5xl floating delay-700">🥕</div>
+  </section>
+
+  <!-- Vision -->
+  <section class="py-32 bg-gradient-to-b from-black to-green-950">
+    <div class="max-w-4xl mx-auto text-center px-6">
+      <h3 class="uppercase tracking-[4px] text-green-400 mb-4">The FreshForge Standard</h3>
+      <p class="text-5xl font-semibold leading-tight title-font">We bridge the gap between local farms and your kitchen — with speed, quality, and zero compromise.</p>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="py-24 border-t border-b border-green-500/20">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 px-8">
+      <div class="text-center">
+        <div class="stat-number text-green-400 font-bold" data-target="500">0</div>
+        <p class="text-xl">Products Delivered Daily</p>
+      </div>
+      <div class="text-center">
+        <div class="stat-number text-green-400 font-bold" data-target="98">0</div>
+        <p class="text-xl">% Freshness Guaranteed</p>
+      </div>
+      <div class="text-center">
+        <div class="stat-number text-green-400 font-bold" data-target="45">0</div>
+        <p class="text-xl">Local Farms Partnered</p>
+      </div>
+      <div class="text-center">
+        <div class="stat-number text-green-400 font-bold" data-target="15">0</div>
+        <p class="text-xl">Minutes Average Delivery</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="shop" class="py-32 bg-black">
+    <div class="max-w-7xl mx-auto px-8">
+      <h2 class="title-font text-6xl font-bold text-center mb-16">Signature Picks</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden">
+          <img src="https://picsum.photos/id/201/600/400" class="w-full h-64 object-cover">
+          <div class="p-8">
+            <h3 class="text-2xl font-semibold">Organic Avocados</h3>
+            <p class="text-green-400 text-xl mt-1">$4.99 / 4pcs</p>
+            <button class="mt-6 w-full bg-green-500 py-4 rounded-2xl font-bold">Add to Cart</button>
+          </div>
+        </div>
+        <!-- Repeat similar cards for more products -->
+        <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden">
+          <img src="https://picsum.photos/id/292/600/400" class="w-full h-64 object-cover">
+          <div class="p-8">
+            <h3 class="text-2xl font-semibold">Grass-Fed Beef</h3>
+            <p class="text-green-400 text-xl mt-1">$12.99 / kg</p>
+            <button class="mt-6 w-full bg-green-500 py-4 rounded-2xl font-bold">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden">
+          <img src="https://picsum.photos/id/431/600/400" class="w-full h-64 object-cover">
+          <div class="p-8">
+            <h3 class="text-2xl font-semibold">Artisan Bread</h3>
+            <p class="text-green-400 text-xl mt-1">$3.49 / loaf</p>
+            <button class="mt-6 w-full bg-green-500 py-4 rounded-2xl font-bold">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section class="py-32 bg-green-950">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="title-font text-6xl font-bold mb-12">We're Builders of Freshness</h2>
+      <div class="grid md:grid-cols-3 gap-12 text-left">
+        <div><strong class="block text-2xl mb-3">🌱 Farm Direct</strong> No middlemen. Straight from trusted growers.</div>
+        <div><strong class="block text-2xl mb-3">⚡ Lightning Fast</strong> Same-hour delivery in the city.</div>
+        <div><strong class="block text-2xl mb-3">♻️ Zero Waste</strong> Eco packaging + surplus donation program.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-16 text-center border-t border-green-500/20">
+    <p class="title-font text-2xl mb-2">FRESHFORGE</p>
+    <p>Made with ❤️ for real food lovers • © 2026</p>
+  </footer>
+
+  <script>
+    // Tailwind script already included
+    // Counter animation
+    function animateCounters() {
+      document.querySelectorAll('.stat-number').forEach(el => {
+        const target = parseInt(el.getAttribute('data-target'));
+        let count = 0;
+        const increment = target / 60;
+        const timer = setInterval(() => {
+          count += increment;
+          if (count >= target) {
+            el.textContent = target + (target === 98 ? '%' : '+');
+            clearInterval(timer);
+          } else {
+            el.textContent = Math.floor(count) + (target === 98 ? '%' : '+');
+          }
+        }, 30);
+      });
+    }
+    window.onload = animateCounters;
+  </script>
+</body>
+</html>
